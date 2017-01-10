@@ -1,0 +1,19 @@
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                   https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+
+    <entity name="Cscfa\JBPEntityManagement\Entity\Build" table="jbp_build" repository-class="Cscfa\JBPEntityManagement\Entity\Repository\BuildRepository">
+        <id name="id" type="guid">
+            <generator strategy="UUID" />
+        </id>
+        <field name="name" type="string" length="50" />
+        <many-to-one field="project" target-entity="Cscfa\JBPEntityManagement\Entity\Project" inversed-by="builds">
+        	<join-column name="project_id" referenced-column-name="id" />
+        </many-to-one>
+        <many-to-one field="status" target-entity="Cscfa\JBPEntityManagement\Entity\Status">
+        	<join-column name="status_id" referenced-column-name="id" />
+        </many-to-one>
+        <one-to-many field="files" target-entity="Cscfa\JBPEntityManagement\Entity\BuildFile" mapped-by="build" />
+    </entity>
+</doctrine-mapping>

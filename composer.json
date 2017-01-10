@@ -8,5 +8,9 @@
 		}
 	},
 	"require" : {
+		"doctrine/collections": "^1@stable",
+		"doctrine/orm": ">=2.3@stable",
+		"doctrine/data-fixtures" : ">=1@stable",
+		"symfony/http-kernel": "3.2@stable"
 	}
 }
