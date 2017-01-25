@@ -7,13 +7,17 @@
         <id name="id" type="guid">
             <generator strategy="UUID" />
         </id>
+        
         <field name="name" type="string" length="50" />
+        
+        <one-to-many field="files" target-entity="Cscfa\JBPEntityManagement\Entity\BuildFile" mapped-by="build" />
+        
         <many-to-one field="project" target-entity="Cscfa\JBPEntityManagement\Entity\Project" inversed-by="builds">
         	<join-column name="project_id" referenced-column-name="id" />
         </many-to-one>
+        
         <many-to-one field="status" target-entity="Cscfa\JBPEntityManagement\Entity\Status">
         	<join-column name="status_id" referenced-column-name="id" />
         </many-to-one>
-        <one-to-many field="files" target-entity="Cscfa\JBPEntityManagement\Entity\BuildFile" mapped-by="build" />
     </entity>
 </doctrine-mapping>

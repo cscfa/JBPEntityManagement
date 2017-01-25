@@ -15,6 +15,7 @@
  */
 
 namespace Cscfa\JBPEntityManagement\Entity;
+
 use Cscfa\JBPEntityManagement\Entity\Project;
 use Cscfa\JBPEntityManagement\Entity\Status;
 use Doctrine\Common\Collections\ArrayCollection;

@@ -43,13 +43,12 @@ class LoadStatusData implements FixtureInterface
             Status::SUCCESS,
             Status::FAILED,
             Status::UNSTABLE,
-            Status::UNKNOWN
+            Status::UNKNOWN,
         );
 
         $statusRepository = $manager->getRepository(Status::class);
 
         foreach ($defaultStatus as $statusName) {
-
             if ($statusRepository->findOneByName($statusName) !== null) {
                 continue;
             }

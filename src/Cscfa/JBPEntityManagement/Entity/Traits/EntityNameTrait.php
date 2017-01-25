@@ -51,23 +51,20 @@ trait EntityNameTrait
      */
     public function setName($name)
     {
-        if (
-            !is_string($name) &&
-            (
+        if (!is_string($name) && (
                 gettype($name) === 'object' &&
                 !method_exists($name, '__toString')
             )
         ) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    'The \'name\' argument is expected to be a string or an '.
-                    'object implementing toString. %s given',
+                    'The \'name\' argument is expected to be a string or an object implementing toString. %s given',
                     gettype($name)
                 )
             );
         }
 
-        $this->name = (string)$name;
+        $this->name = (string) $name;
 
         return $this;
     }

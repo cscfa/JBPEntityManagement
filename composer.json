@@ -12,5 +12,9 @@
 		"doctrine/orm": ">=2.3@stable",
 		"doctrine/data-fixtures" : ">=1@stable",
 		"symfony/http-kernel": "3.2@stable"
-	}
+	},
+    "require-dev": {
+        "cscfa_tool_division/phpunit_test_helper": "dev-master",
+        "escapestudios/symfony2-coding-standard": "2.9.0"
+    }
 }
